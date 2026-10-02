@@ -1,11 +1,13 @@
 // import Actors from "./Actors";
-import Actor2 from "./Actor2";
-import "./App.css";
-import Singer2 from "./Singer2";
+// import Actor2 from "./Actor2";
+// import "./App.css";
+// import Singer2 from "./Singer2";
 // import Todo2 from "./ToDo2";
 // import BookStore from "./BookStore";
 // import Singer from "./Singer";
 // import Todo from "./Todo";
+
+import Library from "./Library";
 
 const appStyle = {
   textAlign: "center",
@@ -39,22 +41,49 @@ const appStyle = {
 //   { id: "05", name: "Computer Science", author: "Author 5", price: 30 },
 // ];
 
-const actors2 = [
-  { name: "John Doe", age: 30, gender: "Male" },
-  { name: "Jane Smith", age: 25, gender: "Female" },
-  { name: "Bob Johnson", age: 28, gender: "Male" },
-];
+// const actors2 = [
+//   { name: "John Doe", age: 30, gender: "Male" },
+//   { name: "Jane Smith", age: 25, gender: "Female" },
+//   { name: "Bob Johnson", age: 28, gender: "Male" },
+// ];
 
-const singers2 = [
-  { id: "01", name: "Adele", age: 33, gender: "Female" },
-  { id: "02", name: "Ed Sheeran", age: 30, gender: "Male" },
-  { id: "03", name: "Beyoncé", age: 39, gender: "Female" },
+// const singers2 = [
+//   { id: "01", name: "Adele", age: 33, gender: "Female" },
+//   { id: "02", name: "Ed Sheeran", age: 30, gender: "Male" },
+//   { id: "03", name: "Beyoncé", age: 39, gender: "Female" },
+// ];
+
+const books = [
+  { id: "01", name: "Physics", author: "Author 1", price: 10 },
+  { id: "02", name: "Chemistry", author: "Author 2", price: 15 },
+  { id: "03", name: "Biology", author: "Author 3", price: 20 },
+  { id: "04", name: "Mathematics", author: "Author 4", price: 25 },
+  { id: "05", name: "Computer Science", author: "Author 5", price: 30 },
 ];
 
 function App() {
   return (
     <div style={appStyle}>
-      <h1>Vite + React: Project</h1>
+      <h1
+        style={{
+          color: "black",
+          textDecoration: "underline",
+          fontSize: "70px",
+        }}
+      >
+        Vite + React: Project
+      </h1>
+      {/* <Library books={books}></Library> */}
+
+      {books.map((book) => (
+        <Library
+          id={book.id}
+          name={book.name}
+          author={book.author}
+          price={book.price}
+        ></Library>
+      ))}
+
       {/* <Todo2
         task="Learning React Completed: Congratulation"
         isDone={true}
@@ -62,7 +91,7 @@ function App() {
       <Todo2 task="Learn Again :" isDone={false}></Todo2>
       <Todo2 task="Please Practice More and More :" isDone={false}></Todo2> */}
 
-      {actors2.map((actor) => (
+      {/* {actors2.map((actor) => (
         <Actor2 name={actor.name} age={actor.age} gender={actor.gender} />
       ))}
 
@@ -74,7 +103,7 @@ function App() {
           age={singer.age}
           gender={singer.gender}
         ></Singer2>
-      ))}
+      ))} */}
 
       {/* <Player name="John Doe" age={30} gender="Male"></Player>
       <Player2 name="Jane Smith" age={25} gender="Female"></Player2>
